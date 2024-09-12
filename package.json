@@ -1,0 +1,19 @@
+{
+  "name": "stock-price-proxy",
+  "version": "1.0.0",
+  "description": "A proxy server that fetches stock prices from Yahoo Finance using Puppeteer.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "puppeteer": "^21.3.8",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
