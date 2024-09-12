@@ -13,7 +13,12 @@ app.get('/:stockCode', async (req, res) => {
     const stockCode = `${baseStockCode}.NS`; // Append 'NS' to the stock code for the URL and selector
     const url = `https://finance.yahoo.com/quote/${stockCode}/`;
 
-    const browser = await puppeteer.launch({ headless: true }); // Set to false if you want to see the browser
+    const browser = await puppeteer.launch({
+  executablePath: '/usr/bin/google-chrome', // or '/usr/bin/chromium-browser'
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox'] // Required in some environments
+});
+ // Set to false if you want to see the browser
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'networkidle2' });
 
